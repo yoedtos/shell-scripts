@@ -5,3 +5,6 @@
 
 #### rsync-folder.sh
 * this script use rsync to synchronize folders with a samba server
+
+### autoshutdown.sh
+* this script auto power off your host computer when there's not activity
