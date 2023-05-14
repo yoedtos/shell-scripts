@@ -5,17 +5,33 @@ A bash shell script that use rsync to synchronize folders with a samba server
 samba-client  
 cifs-utils
 
-* ##### Configuration example
+##### Configuration example
+* Create credential file that contains a username and password. Change it to 600 permission
+
+```bash
+# touch /root/.share.cred
+# chmod 600 /root/.share.cred
+# nano /root/.share.cred
 ```
-#------ configuration ----------------
+
+ex:
+```
+#----- credential ----------------
+username=myuser
+password=mypassword
+
+```
+
+* Edit the rsync-myfolders.conf
+
+```
+#----- configuration -------------
 # folders to sync
 DIRECTORIES="myfolder projects"
-# samba user
-USER=share_user
-# samba password
-PASS=share_pass
 # samba share name
 REMOTE=share/folder
+## user credential
+SIGNIN="/root/share.cred"
 # servers list
 # host name
 NAME1="NAS Server"
