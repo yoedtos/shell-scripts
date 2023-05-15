@@ -7,8 +7,8 @@
 #  - to run on console
 #    $ nohup bash autopower.sh &
 #
-#  autopower.sh v1.7.0
-#  by yoedtos   2020/05/10
+#  autopower.sh v1.7.1
+#  by yoedtos   2023/05/15
 #
 #
 #-------------------------------------------------------------------------------
@@ -162,7 +162,7 @@ set_rtc() {
 shutdown() {
 	local message
 
-	$BEFORE_PWOFF
+	eval $BEFORE_PWOFF
 	message=("AutoPower is running. Please save your work and logout")
         /sbin/shutdown -h +$1 $message
 
